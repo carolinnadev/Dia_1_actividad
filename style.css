@@ -21,22 +21,26 @@ body {
 }
 
 header {
-    margin: 20px 0px 20px 65px;
+    margin: 25px 0px 10px 65px;
     display: flex;
     align-items: center;
     gap: 15px;
-   
 }
 
 #user_icon {
     display: grid;
     flex: 0 0 36px;
-    width: 36px;
-    height: 42px;
+    width: 65px;
+    height: 50px;
     place-items: center;
     background-color: #e51b3e;
     /* Esta es la propiedad clave que recorta el div en forma de hexágono */
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+#user_icon:hover {
+    background-color: #1bc7e5;
+    transition: 0.5s ease;
 }
 
 .icon {
@@ -57,23 +61,39 @@ h1 {
 
 #conferencistas {
     width: 100%;
-    height: 450px;
+    height: 680px;
+    padding: 50px;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 7px;
 }
 
 .tarjeta {
+    border-radius: 25px;
     text-align: center;
     display: grid;
     align-content: center;
     align-items: center;
     justify-content: center;
+    border: 1px solid #e51b3e;
+    margin: 15px;
+    box-shadow: 1px 1px 3px 3px #c52943;
+    background-color: #bb9298b7;
+}
+
+.tarjeta:hover {
+    border-radius: 5px;
+    border: 1px solid #1bc7e5;
+    margin: 10px;
+    box-shadow: 1px 1px 3px 3px #1bc7e5;
+    background-color: #90c5ceab;
+    transition: 0.5s ease;
 }
 
 .retrato {
     display: block;
-    width: 140px;
-    height: 140px;
+    width: 250px;
+    height: 250px;
     margin: 0 auto 12px;
     object-fit: cover;
     object-position: center top;
@@ -82,13 +102,18 @@ h1 {
 
 h2 {
     margin: 0 0 3px;
-    font-size: 13px;
+    font-size: 16px;
 }
 
 h3 {
     margin: 0 0 10px;
     color: #d91f43;
-    font-size: 11px;
+    font-size: 14px;
+}
+
+h3:hover {
+    color: #127c8f;
+    transition: 0.5s ease;
 }
 
 .tarjeta p {
@@ -98,7 +123,7 @@ h3 {
     padding: 10px;
     color: #73777b;
     font-family: Georgia, serif;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .redes {
@@ -109,39 +134,57 @@ h3 {
 
 .redes a {
     display: grid;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     place-items: center;
-    background: #28a8d2;
+    background: #d91f43;
     color: white;
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    font-size: 11px;
+    font-size: 20px;
     font-weight: bold;
     text-decoration: none;
 }
 
+.redes a:hover {
+    background: #28a8d2;
+    transition: 0.5s ease;
+}
+
 #mas_informacion {
-    width: 200px;
-    height: 50px;
+    width: 250px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
-    margin: 0 auto;
+    margin: 50px auto;
     border: 0;
     padding: 11px 23px;
     border-radius: 6px;
     background: #e51b3e;
     color: white;
-    font-size: 13px;
+    font-size: 18px;
     font-weight: bold;
     cursor: pointer;
+    box-shadow: 1px 1px 3px 3px #e51b3e;
+    background-color: #bb9298b7;
+    border-radius: 20px;
+}
+
+#mas_informacion:hover {
+    border-radius: 5px;
+    border: 1px solid #1bc7e5;
+    box-shadow: 1px 1px 3px 3px #1bc7e5;
+    background-color: #90c5ceab;
+    transition: 0.5s ease;
 }
 
 #mas_informacion .icon {
-    width: 17px;
-    height: 17px;
+    width: 20px;
+    height: 20px;
 }
+
+
 
 
 @media (min-width: 769px) {
@@ -191,4 +234,64 @@ h3 {
     #conferencistas {
         grid-template-columns: 1fr;
     }
+}
+
+
+
+@media (max-width: 320px) {
+    #panel {
+        width: 100%;
+        max-width: 100%;
+        padding: 15px 10px;
+        overflow-x: hidden;
+    }
+
+    #conferencistas {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        height: auto;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 15px;
+        box-sizing: border-box;
+    }
+
+    .tarjeta {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .tarjeta img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .tarjeta p {
+        width: 60%;
+        font-size: 14px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    #mas_informacion {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .retrato {
+        margin-top: 5px;
+        width: 125px;
+        height: 135px;
+    }
+
+    .redes a {
+        width: 27px;
+        height: 32px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+    }
+
 }
