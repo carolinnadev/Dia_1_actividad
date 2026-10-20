@@ -1,0 +1,20 @@
+article {
+    width: 100%;
+    border: 2px solid black
+
+}
+#user_icon {
+    width: 30px;
+    height: 30px;
+
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    fill: none;
+    stroke: rgb(15, 15, 15);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
