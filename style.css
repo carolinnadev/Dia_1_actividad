@@ -220,7 +220,10 @@ h3:hover {
 
 @media (max-width: 420px) {
     #panel {
-        padding: 24px 14px;
+        width: 100%;
+        max-width: 100%;
+        padding: 15px 10px;
+        overflow-x: hidden;
     }
 
     header {
@@ -230,9 +233,53 @@ h3:hover {
     h1 {
         font-size: 14px;
     }
+    
+     #conferencistas {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        height: auto;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 15px;
+        box-sizing: border-box;
+    }
 
-    #conferencistas {
-        grid-template-columns: 1fr;
+    .tarjeta {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .tarjeta img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .tarjeta p {
+        width: 60%;
+        font-size: 14px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    #mas_informacion {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .retrato {
+        margin-top: 5px;
+        width: 125px;
+        height: 135px;
+    }
+
+    .redes a {
+        width: 27px;
+        height: 32px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
     }
 }
 
