@@ -4,24 +4,25 @@
 
 body {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
     color: #202b35;
     font-family: Arial, sans-serif;
+    background-color: #f7f9fa;
 }
 
 #panel {
     width: 100%;
     min-height: 100vh;
     margin: 0;
-    padding: 0;
+    padding: 20px;
     display: flex;
     flex-direction: column;
 }
 
 header {
-    margin: 25px 0px 10px 65px;
+    margin: 15px 0 25px 15px;
     display: flex;
     align-items: center;
     gap: 15px;
@@ -29,18 +30,17 @@ header {
 
 #user_icon {
     display: grid;
-    flex: 0 0 36px;
-    width: 65px;
+    width: 50px;
     height: 50px;
+    flex-shrink: 0;
     place-items: center;
     background-color: #e51b3e;
-    /* Esta es la propiedad clave que recorta el div en forma de hexágono */
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    transition: 0.5s ease;
 }
 
 #user_icon:hover {
     background-color: #1bc7e5;
-    transition: 0.5s ease;
 }
 
 .icon {
@@ -61,39 +61,38 @@ h1 {
 
 #conferencistas {
     width: 100%;
-    height: 680px;
-    padding: 50px;
+    height: auto;
+    padding: 10px;
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 7px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
 }
 
 .tarjeta {
     border-radius: 25px;
     text-align: center;
-    display: grid;
-    align-content: center;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 25px 15px;
     border: 1px solid #e51b3e;
-    margin: 15px;
-    box-shadow: 1px 1px 3px 3px #c52943;
+    box-shadow: 1px 1px 6px rgba(197, 41, 67, 0.3);
     background-color: #bb9298b7;
+    transition: 0.5s ease;
 }
 
 .tarjeta:hover {
     border-radius: 5px;
     border: 1px solid #1bc7e5;
-    margin: 10px;
-    box-shadow: 1px 1px 3px 3px #1bc7e5;
+    box-shadow: 1px 1px 6px rgba(27, 199, 229, 0.4);
     background-color: #90c5ceab;
-    transition: 0.5s ease;
 }
 
 .retrato {
     display: block;
-    width: 250px;
-    height: 250px;
+    width: 180px;
+    height: 180px;
     margin: 0 auto 12px;
     object-fit: cover;
     object-position: center top;
@@ -109,74 +108,72 @@ h3 {
     margin: 0 0 10px;
     color: #d91f43;
     font-size: 14px;
+    transition: 0.5s ease;
 }
 
 h3:hover {
     color: #127c8f;
-    transition: 0.5s ease;
 }
 
 .tarjeta p {
-    width: 250px;
+    width: 100%;
+    max-width: 230px;
     min-height: 60px;
-    margin: 0 0 10px;
-    padding: 10px;
+    margin: 0 0 15px;
+    padding: 0 5px;
     color: #73777b;
     font-family: Georgia, serif;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .redes {
     display: flex;
     justify-content: center;
-    gap: 6px;
+    gap: 8px;
+    margin-top: auto;
 }
 
 .redes a {
     display: grid;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     place-items: center;
     background: #d91f43;
     color: white;
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     text-decoration: none;
+    transition: 0.5s ease;
 }
 
 .redes a:hover {
     background: #28a8d2;
-    transition: 0.5s ease;
 }
 
 #mas_informacion {
-    width: 250px;
-    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5px;
-    margin: 50px auto;
-    border: 0;
-    padding: 11px 23px;
-    border-radius: 6px;
-    background: #e51b3e;
+    gap: 8px;
+    margin: 40px auto;
+    padding: 12px 24px;
+    border: 1px solid #e51b3e;
+    border-radius: 20px;
+    background: #bb9298b7;
     color: white;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    box-shadow: 1px 1px 3px 3px #e51b3e;
-    background-color: #bb9298b7;
-    border-radius: 20px;
+    box-shadow: 1px 1px 6px rgba(229, 27, 62, 0.3);
+    transition: 0.5s ease;
 }
 
 #mas_informacion:hover {
     border-radius: 5px;
     border: 1px solid #1bc7e5;
-    box-shadow: 1px 1px 3px 3px #1bc7e5;
+    box-shadow: 1px 1px 6px rgba(27, 199, 229, 0.4);
     background-color: #90c5ceab;
-    transition: 0.5s ease;
 }
 
 #mas_informacion .icon {
@@ -184,161 +181,23 @@ h3:hover {
     height: 20px;
 }
 
-
-
-
-@media (min-width: 769px) {
-    body {
-        overflow: hidden;
-    }
-}
-
-@media (max-width: 700px) {
+/* Ajustes finos para pantallas muy pequeñas (como móviles compactos) */
+@media (max-width: 480px) {
     #panel {
-        padding: 30px 22px;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        box-sizing: border-box;
-    }
-
-    #conferencistas {
-        height: auto;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        row-gap: 28px;
-    }
-
-    .tarjeta p {
-        min-height: 0;
-    }
-
-    #mas_informacion {
-        margin: 20px auto 0;
-        flex-shrink: 0;
-    }
-}
-
-@media (max-width: 420px) {
-    #panel {
-        width: 100%;
-        max-width: 100%;
-        padding: 15px 10px;
-        overflow-x: hidden;
+        padding: 12px;
     }
 
     header {
-        gap: 10px;
-    }
-
-    h1 {
-        font-size: 14px;
-    }
-    
-     #conferencistas {
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
-        height: auto;
-        grid-template-columns: minmax(0, 1fr);
-        gap: 15px;
-        box-sizing: border-box;
-    }
-
-    .tarjeta {
-        width: 100%;
-        min-width: 0;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-
-    .tarjeta img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .tarjeta p {
-        width: 60%;
-        font-size: 14px;
-        margin-right: auto;
-        margin-left: auto;
-    }
-
-    #mas_informacion {
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-
-    .retrato {
-        margin-top: 5px;
-        width: 125px;
-        height: 135px;
-    }
-
-    .redes a {
-        width: 27px;
-        height: 32px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 10px;
-    }
-}
-
-
-
-@media (max-width: 320px) {
-    #panel {
-        width: 100%;
-        max-width: 100%;
-        padding: 15px 10px;
-        overflow-x: hidden;
+        margin-left: 5px;
     }
 
     #conferencistas {
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
-        height: auto;
-        grid-template-columns: minmax(0, 1fr);
+        padding: 5px;
         gap: 15px;
-        box-sizing: border-box;
-    }
-
-    .tarjeta {
-        width: 100%;
-        min-width: 0;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-
-    .tarjeta img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .tarjeta p {
-        width: 60%;
-        font-size: 14px;
-        margin-right: auto;
-        margin-left: auto;
-    }
-
-    #mas_informacion {
-        max-width: 100%;
-        box-sizing: border-box;
     }
 
     .retrato {
-        margin-top: 5px;
-        width: 125px;
-        height: 135px;
+        width: 150px;
+        height: 150px;
     }
-
-    .redes a {
-        width: 27px;
-        height: 32px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 10px;
-    }
-
 }
